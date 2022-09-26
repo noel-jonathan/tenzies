@@ -2,6 +2,7 @@ import React from "react";
 import { v4 as generateId } from "uuid";
 import Die from "./Die";
 import { useEffect } from "react";
+import { useState } from "react";
 
 export default function Main() {
 
@@ -21,7 +22,7 @@ export default function Main() {
         }
     }
 
-    const [dice, setDice] = React.useState(getNewDice(10))
+    const [dice, setDice] = useState(getNewDice(10))
     const diceElements = dice.map( die =>
         <Die 
             key={die.id} 
@@ -53,7 +54,7 @@ export default function Main() {
         setDice(getNewDice(10))
     }
 
-    const [wonGame, setWonGame] = React.useState(false)
+    const [wonGame, setWonGame] = useState(false)
 
     return (
         <main className="center">
