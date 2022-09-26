@@ -13,11 +13,16 @@ export default function Main() {
     const [dice, setDice] = React.useState(getNewDice(10))
     const diceElements = dice.map( die => <Die value={die} />)
     
+    function handleClick() {
+        setDice(getNewDice(10))
+    }
+
     return (
-        <main>
+        <main className="center">
             <div className="dice--container">
                 {diceElements}
             </div>
+            <button className="center" onClick={handleClick}>Roll</button>
         </main>
     )
 }
